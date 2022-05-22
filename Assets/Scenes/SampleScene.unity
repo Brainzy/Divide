@@ -2116,7 +2116,7 @@ MonoBehaviour:
   incommingPrefab: {fileID: 5044659075380131736, guid: 5bd9c00d4ba55b34788aa28e679bb90b, type: 3}
   gameCanvas: {fileID: 1413726512}
   minIncommingValue: 2
-  maxIncommingValue: 100
+  maxIncommingValue: 24
   animationMovementTime: 0.3
   initialSpawnPosition: {x: -200, y: -148.1, z: 0}
   scaleForFirstTwoPositions: {x: 0.4, y: 0.4}
