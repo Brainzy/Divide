@@ -7,7 +7,4 @@ public class EmptyTileScript : MonoBehaviour
 	public EmptyTileScript rightNeighbourTile;
 	public EmptyTileScript leftNeighbourTile;
 	
-	
-	
-	
 }
