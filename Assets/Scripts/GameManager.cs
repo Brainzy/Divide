@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI scoreFromGameCanvas;
 	[SerializeField] private TextMeshProUGUI scoreOnLoseCanvas;
 	
-	public void BoardIsFull()
+	public void BoardIsFull() // game over
 	{
 		gameCanvas.SetActive(false);
 		loseCanvas.SetActive(true);
