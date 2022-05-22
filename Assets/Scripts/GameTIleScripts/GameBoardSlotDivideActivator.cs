@@ -7,12 +7,16 @@ namespace GameTIleScripts
 {
 	public class GameBoardSlotDivideActivator : MonoBehaviour
 	{
-		public GameBoardSlotDivideActivator upNeighbourTile;
-		public GameBoardSlotDivideActivator downNeighbourTile;
-		public GameBoardSlotDivideActivator rightNeighbourTile;
-		public GameBoardSlotDivideActivator leftNeighbourTile;
-		public GameTile numberOnMySlot;
+		[SerializeField] private GameBoardSlotDivideActivator upNeighbourTile;
+		[SerializeField] private GameBoardSlotDivideActivator downNeighbourTile;
+		[SerializeField] private GameBoardSlotDivideActivator rightNeighbourTile;
+		[SerializeField] private GameBoardSlotDivideActivator leftNeighbourTile;
 		[SerializeField] private float comboWaitTime = 0.3f;
+		[SerializeField] private ScoreManager scoreManager;
+		
+		public GameTile numberOnMySlot;
+		
+		
 		private readonly List<GameBoardSlotDivideActivator> myActiveNeighbours = new List<GameBoardSlotDivideActivator>();
 
 		private void Awake()
@@ -26,6 +30,7 @@ namespace GameTIleScripts
 		private void ExecuteDivision(int divider)
 		{
 			if (numberOnMySlot == null) return;
+			scoreManager.AddScore(numberOnMySlot.myValue > divider ? divider : numberOnMySlot.myValue);
 			var calculatedNumberAfterDivision = numberOnMySlot.myValue / divider;
 			numberOnMySlot.myValue = calculatedNumberAfterDivision;
 			if (calculatedNumberAfterDivision < 2) numberOnMySlot = null;
