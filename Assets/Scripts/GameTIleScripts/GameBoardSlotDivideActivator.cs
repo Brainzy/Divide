@@ -47,7 +47,6 @@ namespace GameTIleScripts
 				StartCoroutine(RecursivelyRepeatInCaseOfCombo(listToDivide));
 			}
 		}
-
 		private IEnumerator  RecursivelyRepeatInCaseOfCombo(List<GameBoardSlotDivideActivator> listToDivide)
 		{
 			yield return new WaitForSeconds(comboWaitTime);
