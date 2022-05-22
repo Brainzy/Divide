@@ -1,18 +1,22 @@
+using System.Linq;
 using UnityEngine;
 
-public class DropableTileLocations : MonoBehaviour
+namespace GameTIleScripts
 {
-	public EmptyTileScript[] emptyTileScripts;
-	public Transform keepTileLocationMarker;
-
-	public bool DroppedOnKeep(Transform droppedOn)
+	public class DropableTileLocations : MonoBehaviour
 	{
-		print("provera " + droppedOn.name + " " + keepTileLocationMarker.name);
-		return droppedOn == keepTileLocationMarker;
+		public GameBoardSlotDivideActivator[] emptyTileScripts;
+		public Transform keepTileLocationMarker;
+
+		public bool DroppedOnKeep(Transform droppedOn)
+		{
+			return droppedOn == keepTileLocationMarker;
+		}
+
+		public GameBoardSlotDivideActivator ReturnEmptyTileBasedOnLocation(Vector3 location)
+		{
+			return emptyTileScripts.FirstOrDefault(t => t.transform.position == location);
+		}
+
 	}
-
-
-
-
-
 }

@@ -548,7 +548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -919,6 +919,7 @@ GameObject:
   - component: {fileID: 1253105184}
   - component: {fileID: 1253105185}
   - component: {fileID: 1253105186}
+  - component: {fileID: 1253105187}
   m_Layer: 0
   m_Name: GameTIles
   m_TagString: Untagged
@@ -954,7 +955,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropableTileLocations: {fileID: 1253105186}
   dropAnimationTime: 0.3
+  tileDroppedOnBoardHandler: {fileID: 1253105187}
+  incommingTileSpawnerAndMover: {fileID: 1355462080}
   scaleForKeepPosition: {x: 1.1, y: 1.1}
+  normalScale: {x: 1, y: 1}
 --- !u!114 &1253105186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,6 +982,19 @@ MonoBehaviour:
   - {fileID: 298682709}
   - {fileID: 1622586211}
   keepTileLocationMarker: {fileID: 3127767758180193238}
+--- !u!114 &1253105187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253105183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bfee801e2981946b5b082f54595105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropableTileLocations: {fileID: 1253105186}
 --- !u!224 &1269705334 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3127767758330424918, guid: 86ea8ab14b70d6341a1813afbb66e3be, type: 3}
@@ -1301,10 +1318,13 @@ MonoBehaviour:
   incommingPrefab: {fileID: 5044659075380131736, guid: 5bd9c00d4ba55b34788aa28e679bb90b, type: 3}
   gameCanvas: {fileID: 1413726512}
   minIncommingValue: 2
-  maxIncommingValue: 24
-  scaleForFirstTwoPositions: {x: 0, y: 0}
-  scaleForLastPosition: {x: 100, y: 100}
-  incommingTileScripts: []
+  maxIncommingValue: 12
+  animationMovementTime: 0.3
+  initialSpawnPosition: {x: -200, y: -148.1, z: 0}
+  scaleForFirstTwoPositions: {x: 0.4, y: 0.4}
+  scaleForLastPosition: {x: 1, y: 1}
+  skipSpawningKeepTileWasUsed: 0
+  activeIncommingTileScripts: []
 --- !u!1 &1413726508
 GameObject:
   m_ObjectHideFlags: 0
